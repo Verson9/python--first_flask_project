@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+    <table>
+        {% for key, value in result.items() %}
+        <tr>
+           <th> {{ key }} </th>
+           <td> {{ value }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <!-- Script(back to HOME after 5000ms) -->
+    <script>
+     window.setTimeout(function(){
+       window.location.href ="{{ url_for('home') }}" ;
+       }, 3000);
+    </script>
+{% endblock %}

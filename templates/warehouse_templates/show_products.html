@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Show Products in Warehause{% endblock %}
+
+{% block content %}
+    <h1>Products in Warehouse</h1>
+            <table>
+                <th>Name</th>
+                <th>Descripton</th>
+                <th>Quantity</th>
+                <th>Position</th>
+                <th>Delete</th>
+                {% for key, value in products.items() %}
+                <tr>
+                    <td > {{ value['Name'] }} </td>
+                    <td> {{ value['Descripton'] }} </td>
+                    <td> {{ value['Quantity'] }} </td>
+                    <td> {{ value['Position'] }} </td>
+                    <td><form action="{{ url_for('delete_product', position_to_delete=value['Name'])}}" method=post>
+                        <input type=submit  value="X">
+                        </form></td>
+                </tr>
+                {% endfor %}
+            </table>
+{% endblock %}

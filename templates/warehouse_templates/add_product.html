@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Add Product{% endblock %}
+{% block content %}
+    <h1>Input Product Data</h1>
+    <div class="form-group">
+        <form action = "{{ url_for('added_product') }}" method = "POST">
+           <p>Name <label><input type = "text" name = "Name" /></label></p>
+           <p>Description <label><input type = "text" name = "Descripton" /></label></p>
+           <p>Quantity <label><input type = "text" name = "Quantity" /></label></p>
+           <p>Position <label><input type ="text" name = "Position" /></label></p>
+           <p><input type = "submit" value = "Add Product" /></p>
+        </form>
+    </div>
+{% endblock %}
